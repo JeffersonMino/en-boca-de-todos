@@ -1,0 +1,288 @@
+<section class="admin-shell">
+  <header class="admin-header">
+    <div>
+      <p class="eyebrow">Panel administrativo</p>
+      <h1>Control de pedidos</h1>
+      <p class="subtitle">
+        Gestiona pedidos entrantes, salientes y despacho con notificacion directa.
+      </p>
+      <small class="owner-copy">Sesion activa: {{ ownerName }}</small>
+    </div>
+
+    <div class="header-actions">
+      <a routerLink="/" class="back-link">Volver al menu</a>
+      <button type="button" class="ghost-btn" (click)="logout()">Cerrar sesion</button>
+    </div>
+  </header>
+
+  <div class="stats-grid">
+    <article class="stat-card">
+      <span>Entrantes</span>
+      <strong>{{ incomingOrders.length }}</strong>
+      <small>Pedidos nuevos, confirmados o en preparacion.</small>
+    </article>
+
+    <article class="stat-card">
+      <span>Salientes</span>
+      <strong>{{ outgoingOrders.length }}</strong>
+      <small>Pedidos despachados y entregados.</small>
+    </article>
+
+    <article class="stat-card">
+      <span>Cancelados</span>
+      <strong>{{ cancelledOrders.length }}</strong>
+      <small>Control de incidencias y seguimiento.</small>
+    </article>
+
+    <article class="stat-card accent">
+      <span>Venta acumulada</span>
+      <strong>${{ totalRevenue.toFixed(2) }}</strong>
+      <small>Sumatoria de pedidos no cancelados.</small>
+    </article>
+
+    <article class="stat-card">
+      <span>Contactos CRM</span>
+      <strong>{{ contacts.length }}</strong>
+      <small>{{ hotLeads.length }} contactos calientes.</small>
+    </article>
+
+    <article class="stat-card">
+      <span>Conversaciones</span>
+      <strong>{{ activeConversations.length }}</strong>
+      <small>Chats y consultas pendientes.</small>
+    </article>
+
+    <article class="stat-card">
+      <span>Pipeline</span>
+      <strong>${{ openPipelineValue.toFixed(2) }}</strong>
+      <small>Valor abierto en oportunidades.</small>
+    </article>
+  </div>
+
+  <div class="admin-grid">
+    <section class="board">
+      <div class="board-header">
+        <h2>Pedidos entrantes</h2>
+        <span>{{ incomingOrders.length }} activos</span>
+      </div>
+
+      <article class="order-card" *ngFor="let order of incomingOrders">
+        <div class="order-top">
+          <div>
+            <strong>{{ order.sequential }}</strong>
+            <p>{{ order.customer.name }} - {{ order.customer.phone }}</p>
+          </div>
+          <span class="status-chip" [class]="'status-chip ' + order.status">
+            {{ getStatusLabel(order.status) }}
+          </span>
+        </div>
+
+        <div class="order-meta">
+          <span>{{ order.type === 'delivery' ? 'Domicilio' : 'Retiro' }}</span>
+          <span>{{ formatDate(order.createdAt) }}</span>
+          <span>Total ${{ order.total.toFixed(2) }}</span>
+        </div>
+
+        <ul class="order-items">
+          <li *ngFor="let item of order.items">
+            {{ item.product.name }} x{{ item.quantity }}
+            <strong>${{ item.total.toFixed(2) }}</strong>
+          </li>
+        </ul>
+
+        <p *ngIf="order.delivery?.address" class="delivery-copy">
+          {{ order.delivery?.address }}
+        </p>
+
+        <div class="actions">
+          <button
+            type="button"
+            *ngIf="order.status === 'new'"
+            (click)="setStatus(order, 'confirmed')">
+            Confirmar
+          </button>
+
+          <button
+            type="button"
+            *ngIf="order.status === 'confirmed'"
+            (click)="setStatus(order, 'preparing')">
+            Preparar
+          </button>
+
+          <button
+            type="button"
+            class="dispatch-btn"
+            *ngIf="canDispatch(order)"
+            (click)="setStatus(order, 'dispatched')">
+            Despachar y notificar
+          </button>
+
+          <button
+            type="button"
+            *ngIf="canCompletePickup(order)"
+            (click)="setStatus(order, 'delivered')">
+            Marcar entregado
+          </button>
+
+          <button
+            type="button"
+            class="ghost-btn"
+            (click)="sendOrderTracking(order)">
+            WhatsApp seguimiento
+          </button>
+
+          <button
+            type="button"
+            class="ghost-btn"
+            *ngIf="order.status !== 'cancelled'"
+            (click)="setStatus(order, 'cancelled')">
+            Cancelar
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <section class="board">
+      <div class="board-header">
+        <h2>Pedidos salientes</h2>
+        <span>{{ outgoingOrders.length }} en ruta o cerrados</span>
+      </div>
+
+      <article class="order-card compact" *ngFor="let order of outgoingOrders">
+        <div class="order-top">
+          <div>
+            <strong>{{ order.sequential }}</strong>
+            <p>{{ order.customer.name }}</p>
+          </div>
+          <span class="status-chip" [class]="'status-chip ' + order.status">
+            {{ getStatusLabel(order.status) }}
+          </span>
+        </div>
+
+        <div class="order-meta">
+          <span>{{ formatDate(order.updatedAt) }}</span>
+          <span>Total ${{ order.total.toFixed(2) }}</span>
+        </div>
+
+        <div class="actions">
+          <button
+            type="button"
+            *ngIf="order.status === 'dispatched'"
+            (click)="setStatus(order, 'delivered')">
+            Marcar entregado
+          </button>
+          <button type="button" class="ghost-btn" (click)="sendOrderTracking(order)">
+            WhatsApp seguimiento
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="notifications-panel">
+      <div class="board-header">
+        <h2>Notificaciones</h2>
+        <span>{{ notifications.length }}</span>
+      </div>
+
+      <article
+        class="notification-card"
+        *ngFor="let notification of notifications.slice(0, 8)"
+        [class.unread]="!notification.read">
+        <div>
+          <strong>{{ notification.title }}</strong>
+          <p>{{ notification.message }}</p>
+          <small>{{ formatDate(notification.createdAt) }}</small>
+        </div>
+
+        <button
+          type="button"
+          class="ghost-btn"
+          *ngIf="!notification.read"
+          (click)="markAsRead(notification.id)">
+          Leida
+        </button>
+      </article>
+    </aside>
+  </div>
+
+  <section class="crm-workspace">
+    <div class="board-header">
+      <div>
+        <p class="eyebrow">CRM escalable</p>
+        <h2>Clientes, conversaciones y oportunidades</h2>
+      </div>
+      <span>{{ activities.length }} actividades registradas</span>
+    </div>
+
+    <div class="crm-grid">
+      <section class="board">
+        <div class="board-header">
+          <h3>Contactos</h3>
+          <span>{{ contacts.length }}</span>
+        </div>
+
+        <article class="contact-row" *ngFor="let contact of contacts.slice(0, 8)">
+          <div>
+            <strong>{{ contact.name }}</strong>
+            <p>{{ contact.phone || contact.email || 'Sin telefono registrado' }}</p>
+            <small>{{ contact.stage }} - score {{ contact.score }}</small>
+          </div>
+          <button type="button" class="ghost-btn" (click)="openContactWhatsApp(contact)">
+            WhatsApp
+          </button>
+        </article>
+      </section>
+
+      <section class="board">
+        <div class="board-header">
+          <h3>Conversaciones</h3>
+          <span>{{ activeConversations.length }} abiertas</span>
+        </div>
+
+        <article
+          class="conversation-row"
+          *ngFor="let conversation of conversations.slice(0, 8)">
+          <div>
+            <strong>{{ getContactName(conversation.contactId) }}</strong>
+            <p>{{ conversation.lastMessage || conversation.subject }}</p>
+          </div>
+          <span class="status-chip">{{ conversation.channel }}</span>
+        </article>
+      </section>
+
+      <section class="board">
+        <div class="board-header">
+          <h3>Pipeline</h3>
+          <span>{{ opportunities.length }}</span>
+        </div>
+
+        <article class="pipeline-row" *ngFor="let opportunity of opportunities.slice(0, 8)">
+          <div>
+            <strong>{{ opportunity.title }}</strong>
+            <p>{{ getContactName(opportunity.contactId) }}</p>
+          </div>
+          <div class="pipeline-value">
+            <strong>${{ opportunity.value.toFixed(2) }}</strong>
+            <small>{{ opportunity.stage }} - {{ opportunity.probability }}%</small>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <section class="board activity-board">
+      <div class="board-header">
+        <h3>Timeline CRM</h3>
+        <span>Ultimos movimientos</span>
+      </div>
+
+      <article class="activity-row" *ngFor="let activity of activities.slice(0, 10)">
+        <span>{{ activity.channel }}</span>
+        <div>
+          <strong>{{ activity.title }}</strong>
+          <p>{{ activity.detail }}</p>
+          <small>{{ formatDate(activity.createdAt) }}</small>
+        </div>
+      </article>
+    </section>
+  </section>
+</section>

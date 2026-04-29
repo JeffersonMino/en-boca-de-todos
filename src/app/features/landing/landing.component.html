@@ -1,0 +1,126 @@
+<section class="landing-shell">
+  <header class="topbar">
+    <div class="brand">
+      <h1 class="brand-title">En Boca de Todos</h1>
+    </div>
+
+    <nav>
+      <button type="button" class="ghost-link" (click)="goToMenu()">Menu</button>
+      <a routerLink="/admin/login" class="solid-link">Admin</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="hero-kicker">Quito - delivery y retiro</p>
+      <h1 class="hero-title">
+        El sabor de dos paises fusionados en una sola experiencia
+      </h1>
+
+      <div class="hero-actions">
+        <button type="button" class="primary-cta" (click)="goToMenu()">
+          Ordenar ahora
+        </button>
+        <a routerLink="/admin/login" class="secondary-cta">Ver panel admin</a>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <article>
+        <span>Pedidos centralizados</span>
+        <strong>{{ recentOrders.length || 0 }}</strong>
+      </article>
+      <article>
+        <span>Notificaciones</span>
+        <strong>{{ customerNotifications.length || 0 }}</strong>
+      </article>
+      <article class="brand-showcase">
+        <img alt="Logo En Boca de Todos" src="/Fondo1.png" class="brand-logo">
+        <h2 class="brand-title">En Boca de Todos</h2>
+      </article>
+    </div>
+  </section>
+
+  <section class="status-section" *ngIf="recentOrders.length || customerNotifications.length">
+    <div class="section-heading">
+      <div>
+        <p class="hero-kicker">Seguimiento</p>
+        <h2>Estado de pedidos recientes</h2>
+      </div>
+    </div>
+
+    <div class="status-grid">
+      <article class="tracking-card" *ngFor="let order of recentOrders">
+        <div class="tracking-top">
+          <div>
+            <strong>{{ order.sequential }}</strong>
+            <p>{{ order.customer.name }}</p>
+          </div>
+          <span class="status-pill">{{ getStatusLabel(order) }}</span>
+        </div>
+
+        <div class="progress-bar">
+          <span [style.width.%]="getProgress(order)"></span>
+        </div>
+
+        <div class="tracking-meta">
+          <small>{{ formatDate(order.updatedAt) }}</small>
+          <strong>${{ order.total.toFixed(2) }}</strong>
+        </div>
+      </article>
+
+      <aside class="notification-list" *ngIf="customerNotifications.length">
+        <article *ngFor="let notification of customerNotifications">
+          <strong>{{ notification.title }}</strong>
+          <p>{{ notification.message }}</p>
+        </article>
+      </aside>
+    </div>
+  </section>
+
+  <section id="menu-section" class="menu-section">
+    <div class="section-heading">
+      <div>
+        <h2>Menu</h2>
+      </div>
+    </div>
+
+    <div class="category-strip">
+      <button
+        type="button"
+        *ngFor="let cat of categories"
+        [class.active]="activeCategory === cat"
+        (click)="focusCategory(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="menu-layout">
+      <div class="menu-content">
+        <section
+          class="category-block"
+          *ngFor="let cat of categories"
+          [id]="cat">
+          <div class="category-head">
+            <div>
+              <p class="hero-kicker">Categoria</p>
+              <h3>{{ cat }}</h3>
+            </div>
+            <span>{{ groupedProducts[cat].length }} productos</span>
+          </div>
+
+          <div class="product-grid">
+            <app-product-card
+              *ngFor="let product of groupedProducts[cat]"
+              [product]="product">
+            </app-product-card>
+          </div>
+        </section>
+      </div>
+
+      <app-cart></app-cart>
+    </div>
+  </section>
+
+  <app-chatbot></app-chatbot>
+</section>

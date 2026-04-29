@@ -1,0 +1,52 @@
+<button
+  type="button"
+  class="chat-launcher"
+  [class.open]="isOpen"
+  (click)="toggleChat()"
+  aria-label="Abrir asistente de chat">
+  Chat
+</button>
+
+<section class="chat-panel" *ngIf="isOpen">
+  <header class="chat-header">
+    <div>
+      <strong>Asistente de chat</strong>
+      <span>Ventas, pedidos y seguimiento</span>
+    </div>
+    <button type="button" (click)="toggleChat()" aria-label="Cerrar chat">x</button>
+  </header>
+
+  <div class="lead-fields">
+    <input
+      type="text"
+      placeholder="Nombre"
+      [(ngModel)]="leadName"
+      (blur)="updateLead()" />
+    <input
+      type="text"
+      placeholder="WhatsApp"
+      [(ngModel)]="leadPhone"
+      (blur)="updateLead()" />
+  </div>
+
+  <div class="quick-prompts">
+    <button type="button" *ngFor="let prompt of quickPrompts" (click)="usePrompt(prompt)">
+      {{ prompt }}
+    </button>
+  </div>
+
+  <div class="messages">
+    <article
+      *ngFor="let msg of messages"
+      class="message"
+      [class.customer]="msg.sender === 'Cliente'">
+      <span>{{ msg.sender }}</span>
+      <p>{{ msg.text }}</p>
+    </article>
+  </div>
+
+  <form class="chat-input" (ngSubmit)="sendMessage()">
+    <input [(ngModel)]="userInput" name="userInput" placeholder="Escribe tu mensaje..." />
+    <button type="submit">Enviar</button>
+  </form>
+</section>

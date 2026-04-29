@@ -1,0 +1,581 @@
+{
+  "version": 1,
+  "meta": {
+    "createdAt": "2026-04-29T00:00:00.000Z",
+    "updatedAt": "2026-04-29T20:26:46.819Z",
+    "restaurantName": "EN BOCA DE TODOS",
+    "country": "Ecuador",
+    "currency": "USD"
+  },
+  "admins": [
+    {
+      "id": "admin-primary",
+      "username": "admin",
+      "ownerName": "Administrador principal",
+      "role": "owner",
+      "passwordHash": "9125d448ded92752af12dba55ce3057bf22fe7aa7226e7a7e983e92c89ee6c5c",
+      "passwordSalt": "ebdt-local-admin-password-salt",
+      "confirmationCodeHash": "a3d83d0194e432b526af2d682f39f6231e5417e023eddc3b95a0781e045ed85f",
+      "confirmationCodeSalt": "ebdt-local-admin-code-salt",
+      "active": true,
+      "createdAt": "2026-04-29T00:00:00.000Z",
+      "updatedAt": "2026-04-29T00:00:00.000Z"
+    }
+  ],
+  "adminChallenges": [],
+  "adminSessions": [
+    {
+      "id": "adm-session-3ffc2aa0-1246-4c81-9446-7bd5c228e79f",
+      "adminId": "admin-primary",
+      "token": "adm-token-e07b41dc-7244-41e1-915e-936a73210f53",
+      "createdAt": "2026-04-29T20:24:42.883Z",
+      "expiresAt": "2026-04-30T04:24:42.883Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-2rail7pn",
+      "sequential": "PED-0001",
+      "items": [
+        {
+          "product": {
+            "id": "4",
+            "name": "Hamburguesa Completa",
+            "price": 6,
+            "image": "/Comida/HaburSimple.png",
+            "description": "Pan artesanal, carne, vegetales frescos y salsa especial.",
+            "category": "Hamburguesas",
+            "taxRate": 0.15
+          },
+          "quantity": 1,
+          "total": 6
+        }
+      ],
+      "subtotal": 6,
+      "tax": 0.8999999999999999,
+      "total": 6.9,
+      "createdAt": "2026-04-29T20:24:09.012Z",
+      "updatedAt": "2026-04-29T20:25:52.778Z",
+      "status": "delivered",
+      "type": "delivery",
+      "source": "delivery",
+      "customer": {
+        "name": "jefferson",
+        "phone": "0963095265",
+        "email": "jeffer.mio@gmail.com"
+      },
+      "delivery": {
+        "address": "Fco. Bolona 1472, 170103 Quito, Ecuador",
+        "notes": "casa 3 pisos"
+      },
+      "billing": {
+        "type": null,
+        "ruc": "",
+        "businessName": "",
+        "fiscalAddress": "",
+        "email": "",
+        "phone": ""
+      },
+      "estimatedMinutes": 45,
+      "dispatchedAt": "2026-04-29T20:25:34.879Z",
+      "deliveredAt": "2026-04-29T20:25:52.778Z"
+    }
+  ],
+  "notifications": [
+    {
+      "orderId": "ord-2rail7pn",
+      "title": "Estado actualizado: PED-0001",
+      "message": "El pedido paso a entregado.",
+      "kind": "status-change",
+      "audience": "admin",
+      "id": "ntf-i7m2ttun",
+      "createdAt": "2026-04-29T20:25:52.778Z",
+      "read": true
+    },
+    {
+      "orderId": "ord-2rail7pn",
+      "title": "Tu pedido PED-0001 va en camino",
+      "message": "Salida confirmada. Tiempo estimado restante: 45 min.",
+      "kind": "dispatch",
+      "audience": "customer",
+      "id": "ntf-g3gww6sz",
+      "createdAt": "2026-04-29T20:25:34.881Z",
+      "read": true
+    },
+    {
+      "orderId": "ord-2rail7pn",
+      "title": "Estado actualizado: PED-0001",
+      "message": "El pedido paso a despachado.",
+      "kind": "dispatch",
+      "audience": "admin",
+      "id": "ntf-23w1jp1k",
+      "createdAt": "2026-04-29T20:25:34.879Z",
+      "read": true
+    },
+    {
+      "orderId": "ord-2rail7pn",
+      "title": "Estado actualizado: PED-0001",
+      "message": "El pedido paso a en preparacion.",
+      "kind": "status-change",
+      "audience": "admin",
+      "id": "ntf-3c3ca6zr",
+      "createdAt": "2026-04-29T20:25:26.110Z",
+      "read": true
+    },
+    {
+      "orderId": "ord-2rail7pn",
+      "title": "Estado actualizado: PED-0001",
+      "message": "El pedido paso a confirmado.",
+      "kind": "status-change",
+      "audience": "admin",
+      "id": "ntf-vn0kkzkd",
+      "createdAt": "2026-04-29T20:25:01.893Z",
+      "read": true
+    },
+    {
+      "orderId": "ord-2rail7pn",
+      "title": "Nuevo pedido PED-0001",
+      "message": "jefferson registro un pedido a domicilio.",
+      "kind": "new-order",
+      "audience": "admin",
+      "id": "ntf-pmw3fs15",
+      "createdAt": "2026-04-29T20:24:09.013Z",
+      "read": true
+    }
+  ],
+  "contacts": [
+    {
+      "id": "crm-contact-i1wma6wt",
+      "name": "jefferson",
+      "phone": "593963095265",
+      "email": "jeffer.mio@gmail.com",
+      "source": "chatbot",
+      "stage": "vip",
+      "tags": [
+        "chatbot",
+        "lead-web",
+        "consulta-general",
+        "delivery",
+        "menu",
+        "seguimiento",
+        "pedido",
+        "whatsapp",
+        "confirmado",
+        "en preparacion",
+        "despachado",
+        "entregado"
+      ],
+      "score": 100,
+      "totalOrders": 1,
+      "totalSpent": 6.9,
+      "lastInteractionAt": "2026-04-29T20:25:52.802Z",
+      "createdAt": "2026-04-29T20:22:08.422Z",
+      "updatedAt": "2026-04-29T20:25:52.802Z",
+      "lastOrderId": "ord-2rail7pn"
+    },
+    {
+      "id": "crm-contact-33egdm7b",
+      "name": "jefferson",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot",
+        "lead-web"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-04-29T20:21:46.527Z",
+      "createdAt": "2026-04-29T20:21:46.527Z",
+      "updatedAt": "2026-04-29T20:21:46.527Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Desde el panel admin se envia el seguimiento por WhatsApp. Ten a mano tu codigo de pedido para ubicarlo mas rapido.",
+      "createdAt": "2026-04-29T20:22:10.808Z",
+      "updatedAt": "2026-04-29T20:22:52.289Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "crm-msg-uuomuwmr",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "bot",
+      "text": "Desde el panel admin se envia el seguimiento por WhatsApp. Ten a mano tu codigo de pedido para ubicarlo mas rapido.",
+      "intent": "tracking",
+      "createdAt": "2026-04-29T20:22:52.288Z"
+    },
+    {
+      "id": "crm-msg-da98zvu3",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "customer",
+      "text": "Seguimiento",
+      "createdAt": "2026-04-29T20:22:52.286Z"
+    },
+    {
+      "id": "crm-msg-qxko2ax9",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "bot",
+      "text": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "intent": "unknown",
+      "createdAt": "2026-04-29T20:22:41.947Z"
+    },
+    {
+      "id": "crm-msg-imxlrtrj",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "customer",
+      "text": "hamburgesas",
+      "createdAt": "2026-04-29T20:22:41.945Z"
+    },
+    {
+      "id": "crm-msg-wi8mryo6",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "bot",
+      "text": "Tenemos hamburguesas, alitas, sanduches, especiales y bebidas. Si me escribes el producto, lo puedo agregar al pedido.",
+      "intent": "menu",
+      "createdAt": "2026-04-29T20:22:35.294Z"
+    },
+    {
+      "id": "crm-msg-6pb3vwoe",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "customer",
+      "text": "Ver menu",
+      "createdAt": "2026-04-29T20:22:35.292Z"
+    },
+    {
+      "id": "crm-msg-7xj2nnkw",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "bot",
+      "text": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "intent": "unknown",
+      "createdAt": "2026-04-29T20:22:30.860Z"
+    },
+    {
+      "id": "crm-msg-yudytd7r",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "customer",
+      "text": "jefferson , miraflores",
+      "createdAt": "2026-04-29T20:22:30.859Z"
+    },
+    {
+      "id": "crm-msg-uyf0z76u",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "bot",
+      "text": "Para delivery necesito nombre, WhatsApp y direccion. Luego el admin te envia seguimiento por WhatsApp en cada etapa.",
+      "intent": "delivery",
+      "createdAt": "2026-04-29T20:22:15.066Z"
+    },
+    {
+      "id": "crm-msg-3lsw09jz",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "customer",
+      "text": "Quiero delivery",
+      "createdAt": "2026-04-29T20:22:15.064Z"
+    },
+    {
+      "id": "crm-msg-hweqocqu",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "bot",
+      "text": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "intent": "unknown",
+      "createdAt": "2026-04-29T20:22:10.812Z"
+    },
+    {
+      "id": "crm-msg-ws0xtipc",
+      "conversationId": "crm-conv-phr4kc1o",
+      "contactId": "crm-contact-i1wma6wt",
+      "sender": "customer",
+      "text": "hola",
+      "createdAt": "2026-04-29T20:22:10.808Z"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "crm-opp-6rkzk9yx",
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "title": "Pedido PED-0001",
+      "stage": "won",
+      "value": 6.9,
+      "probability": 100,
+      "orderType": "delivery",
+      "createdAt": "2026-04-29T20:24:09.015Z",
+      "updatedAt": "2026-04-29T20:25:52.779Z"
+    }
+  ],
+  "activities": [
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "whatsapp",
+      "channel": "whatsapp",
+      "title": "WhatsApp jefferson",
+      "detail": "Contacto manual desde panel CRM.",
+      "id": "crm-act-y2v3f0x8",
+      "createdAt": "2026-04-29T20:26:15.331Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "whatsapp",
+      "channel": "whatsapp",
+      "title": "WhatsApp PED-0001",
+      "detail": "Seguimiento enviado al cliente con estado entregado.",
+      "id": "crm-act-xf8i740u",
+      "createdAt": "2026-04-29T20:25:52.803Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "status",
+      "channel": "admin",
+      "title": "Estado PED-0001",
+      "detail": "El pedido paso a entregado.",
+      "id": "crm-act-cp52d2l4",
+      "createdAt": "2026-04-29T20:25:52.779Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "whatsapp",
+      "channel": "whatsapp",
+      "title": "WhatsApp PED-0001",
+      "detail": "Seguimiento enviado al cliente con estado despachado.",
+      "id": "crm-act-gbko0cod",
+      "createdAt": "2026-04-29T20:25:34.906Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "status",
+      "channel": "admin",
+      "title": "Estado PED-0001",
+      "detail": "El pedido paso a despachado.",
+      "id": "crm-act-o7lho98a",
+      "createdAt": "2026-04-29T20:25:34.880Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "whatsapp",
+      "channel": "whatsapp",
+      "title": "WhatsApp PED-0001",
+      "detail": "Seguimiento enviado al cliente con estado en preparacion.",
+      "id": "crm-act-c8ucm12o",
+      "createdAt": "2026-04-29T20:25:26.139Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "status",
+      "channel": "admin",
+      "title": "Estado PED-0001",
+      "detail": "El pedido paso a en preparacion.",
+      "id": "crm-act-byq1kl52",
+      "createdAt": "2026-04-29T20:25:26.111Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "whatsapp",
+      "channel": "whatsapp",
+      "title": "WhatsApp PED-0001",
+      "detail": "Seguimiento enviado al cliente con estado confirmado.",
+      "id": "crm-act-v46nuenl",
+      "createdAt": "2026-04-29T20:25:01.918Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "status",
+      "channel": "admin",
+      "title": "Estado PED-0001",
+      "detail": "El pedido paso a confirmado.",
+      "id": "crm-act-jus68nvq",
+      "createdAt": "2026-04-29T20:25:01.894Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "whatsapp",
+      "channel": "whatsapp",
+      "title": "WhatsApp PED-0001",
+      "detail": "Seguimiento enviado al cliente con estado nuevo.",
+      "id": "crm-act-7zqq500z",
+      "createdAt": "2026-04-29T20:24:47.452Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "orderId": "ord-2rail7pn",
+      "type": "order",
+      "channel": "order",
+      "title": "Pedido PED-0001",
+      "detail": "Domicilio por $6.90",
+      "id": "crm-act-lh15zlvb",
+      "createdAt": "2026-04-29T20:24:09.016Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de jefferson",
+      "detail": "Seguimiento",
+      "id": "crm-act-0osob9k9",
+      "createdAt": "2026-04-29T20:22:52.287Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de jefferson",
+      "detail": "hamburgesas",
+      "id": "crm-act-b2vljj8n",
+      "createdAt": "2026-04-29T20:22:41.946Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de jefferson",
+      "detail": "Ver menu",
+      "id": "crm-act-521z7e0w",
+      "createdAt": "2026-04-29T20:22:35.293Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de jefferson",
+      "detail": "jefferson , miraflores",
+      "id": "crm-act-qcy3dmgv",
+      "createdAt": "2026-04-29T20:22:30.860Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de jefferson",
+      "detail": "Quiero delivery",
+      "id": "crm-act-ytangail",
+      "createdAt": "2026-04-29T20:22:15.065Z"
+    },
+    {
+      "contactId": "crm-contact-i1wma6wt",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de jefferson",
+      "detail": "hola",
+      "id": "crm-act-18694ylj",
+      "createdAt": "2026-04-29T20:22:10.810Z"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "integration-whatsapp-business",
+      "provider": "whatsapp",
+      "label": "WhatsApp Business API",
+      "status": "pending",
+      "config": {
+        "mode": "wa.me-link",
+        "phone": ""
+      },
+      "createdAt": "2026-04-29T00:00:00.000Z",
+      "updatedAt": "2026-04-29T00:00:00.000Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "order.status_updated",
+      "entity": "order",
+      "entityId": "ord-2rail7pn",
+      "detail": "Estado actualizado a delivered.",
+      "id": "audit-18854f35-a39b-4c7b-a789-05bf2644d62f",
+      "createdAt": "2026-04-29T20:25:52.810Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "order.status_updated",
+      "entity": "order",
+      "entityId": "ord-2rail7pn",
+      "detail": "Estado actualizado a dispatched.",
+      "id": "audit-bdf49043-7939-4978-8e25-a226c2517954",
+      "createdAt": "2026-04-29T20:25:34.916Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "order.status_updated",
+      "entity": "order",
+      "entityId": "ord-2rail7pn",
+      "detail": "Estado actualizado a preparing.",
+      "id": "audit-eb84763f-c557-4d95-80b4-d0a2e6608b42",
+      "createdAt": "2026-04-29T20:25:26.145Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "order.status_updated",
+      "entity": "order",
+      "entityId": "ord-2rail7pn",
+      "detail": "Estado actualizado a confirmed.",
+      "id": "audit-82131bdf-8968-4c34-b4c6-90e5a5606a03",
+      "createdAt": "2026-04-29T20:25:01.926Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.confirmed",
+      "entity": "admin_session",
+      "entityId": "adm-session-3ffc2aa0-1246-4c81-9446-7bd5c228e79f",
+      "detail": "Sesion administrativa iniciada.",
+      "id": "audit-40129bdf-745d-4b8b-b754-23068bc0063e",
+      "createdAt": "2026-04-29T20:24:42.883Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.challenge_created",
+      "entity": "admin",
+      "entityId": "admin-primary",
+      "detail": "Credenciales validadas, codigo de confirmacion requerido.",
+      "id": "audit-5c2b18ca-725c-4edb-8a6b-b2a096a5f29b",
+      "createdAt": "2026-04-29T20:24:33.664Z"
+    },
+    {
+      "actorType": "customer",
+      "action": "order.created",
+      "entity": "order",
+      "entityId": "ord-2rail7pn",
+      "detail": "Pedido PED-0001 registrado desde el canal delivery.",
+      "id": "audit-17c3d599-e711-452a-9633-5b7008a6ccfa",
+      "createdAt": "2026-04-29T20:24:09.018Z"
+    },
+    {
+      "id": "audit-initial-seed",
+      "actorType": "system",
+      "action": "database.seeded",
+      "entity": "database",
+      "detail": "Base local CRM inicializada para En Boca de Todos.",
+      "createdAt": "2026-04-29T00:00:00.000Z"
+    }
+  ]
+}

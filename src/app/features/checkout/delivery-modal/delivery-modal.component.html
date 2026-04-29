@@ -1,0 +1,118 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <div>
+        <p class="eyebrow">Pedido a domicilio</p>
+        <h2>Confirma la entrega</h2>
+      </div>
+      <button type="button" class="close-btn" (click)="cerrar()">x</button>
+    </div>
+
+    <div class="modal-body">
+      <section class="map-panel">
+        <div id="map" class="map"></div>
+        <p class="map-hint">
+          {{ mapReady ? 'Arrastra el pin para ajustar la entrega.' : 'Puedes escribir la direccion manualmente si el mapa tarda en cargar.' }}
+        </p>
+      </section>
+
+      <section class="form-panel">
+        <p *ngIf="validationMessage" class="validation">{{ validationMessage }}</p>
+
+        <div class="field-grid">
+          <input
+            type="text"
+            placeholder="Nombre del cliente"
+            [(ngModel)]="customerName" />
+
+          <input
+            type="text"
+            placeholder="Telefono"
+            [(ngModel)]="telefono" />
+
+          <input
+            type="email"
+            placeholder="Correo (opcional)"
+            [(ngModel)]="correo" />
+        </div>
+
+        <textarea
+          rows="2"
+          placeholder="Direccion de entrega"
+          [(ngModel)]="direccionSeleccionada"></textarea>
+
+        <textarea
+          rows="2"
+          placeholder="Referencia adicional"
+          [(ngModel)]="referencias"></textarea>
+
+        <div *ngIf="comprobanteSeleccionado" class="billing-box">
+          <strong>Comprobante:</strong> {{ comprobanteSeleccionado }}
+
+          <div *ngIf="comprobanteSeleccionado === 'factura'" class="factura-info">
+            <input
+              type="text"
+              placeholder="RUC"
+              [(ngModel)]="datosFactura.ruc"
+              (ngModelChange)="updateDatosFactura()" />
+
+            <input
+              type="text"
+              placeholder="Razon social"
+              [(ngModel)]="datosFactura.razonSocial"
+              (ngModelChange)="updateDatosFactura()" />
+
+            <input
+              type="text"
+              placeholder="Direccion fiscal"
+              [(ngModel)]="datosFactura.direccionFiscal"
+              (ngModelChange)="updateDatosFactura()" />
+
+            <input
+              type="email"
+              placeholder="Correo de facturacion"
+              [(ngModel)]="datosFactura.correo"
+              (ngModelChange)="updateDatosFactura()" />
+
+            <input
+              type="text"
+              placeholder="Telefono de facturacion"
+              [(ngModel)]="datosFactura.telefono"
+              (ngModelChange)="updateDatosFactura()" />
+          </div>
+        </div>
+      </section>
+
+      <aside class="order-summary">
+        <h3>Resumen</h3>
+
+        <div *ngFor="let item of items" class="order-item">
+          <span>{{ item.product.name }} x{{ item.quantity }}</span>
+          <span>${{ (item.product.price * item.quantity).toFixed(2) }}</span>
+        </div>
+
+        <div class="totals">
+          <div>
+            <span>Subtotal</span>
+            <strong>${{ subtotal.toFixed(2) }}</strong>
+          </div>
+          <div>
+            <span>IVA</span>
+            <strong>${{ tax.toFixed(2) }}</strong>
+          </div>
+          <div class="grand-total">
+            <span>Total</span>
+            <strong>${{ total.toFixed(2) }}</strong>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="secondary-btn" (click)="cerrar()">Cancelar</button>
+      <button type="button" class="confirm-btn" (click)="confirmarPedido()">
+        Confirmar pedido
+      </button>
+    </div>
+  </div>
+</div>

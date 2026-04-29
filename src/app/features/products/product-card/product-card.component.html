@@ -1,0 +1,26 @@
+<div class="card" [class.bump]="added" *ngIf="product as currentProduct">
+  <div class="media" [class.placeholder]="imageError">
+    <img
+      *ngIf="!imageError"
+      [src]="currentProduct.image"
+      [alt]="currentProduct.name"
+      loading="lazy"
+      (error)="onImageError()" />
+
+    <span *ngIf="imageError">{{ currentProduct.category }}</span>
+  </div>
+
+  <div class="content">
+    <span class="category">{{ currentProduct.category }}</span>
+    <h4>{{ currentProduct.name }}</h4>
+    <p>{{ currentProduct.description ?? fallbackDescription }}</p>
+  </div>
+
+  <div class="footer">
+    <strong>${{ currentProduct.price | number:'1.2-2' }}</strong>
+
+    <button type="button" (click)="add()">
+      Agregar
+    </button>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<section class="login-shell">
+  <div class="login-card">
+    <div class="login-copy">
+      <p class="eyebrow">Acceso protegido</p>
+      <h1>Ingreso al panel admin</h1>
+      <p>
+        Solo la persona autorizada puede entrar. Primero valida usuario y clave, luego confirma con el codigo de acceso.
+      </p>
+
+      <a routerLink="/" class="back-link">Volver al menu</a>
+    </div>
+
+    <div class="login-form">
+      <div class="owner-box">
+        <span>Cuenta protegida</span>
+        <strong>{{ ownerName }}</strong>
+      </div>
+
+      <p
+        *ngIf="message"
+        class="message"
+        [class.warning]="tone === 'warning'">
+        {{ message }}
+      </p>
+
+      <form *ngIf="step === 'credentials'" (ngSubmit)="submitCredentials()">
+        <label>
+          Usuario
+          <input
+            type="text"
+            name="username"
+            autocomplete="username"
+            [(ngModel)]="username"
+            placeholder="admin" />
+        </label>
+
+        <label>
+          Clave
+          <input
+            type="password"
+            name="password"
+            autocomplete="current-password"
+            [(ngModel)]="password"
+            placeholder="Ingresa tu clave" />
+        </label>
+
+        <button type="submit" [disabled]="loading">
+          {{ loading ? 'Validando...' : 'Continuar' }}
+        </button>
+      </form>
+
+      <form *ngIf="step === 'confirmation'" (ngSubmit)="submitConfirmationCode()">
+        <label>
+          Codigo de confirmacion
+          <input
+            type="password"
+            name="confirmationCode"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            [(ngModel)]="confirmationCode"
+            placeholder="6 digitos" />
+        </label>
+
+        <div class="action-row">
+          <button type="button" class="ghost-btn" (click)="backToCredentials()" [disabled]="loading">
+            Cambiar clave
+          </button>
+          <button type="submit" [disabled]="loading">
+            {{ loading ? 'Confirmando...' : 'Ingresar' }}
+          </button>
+        </div>
+      </form>
+
+      <small class="note">
+        Las credenciales viven hasheadas en la base local del servidor, no en el bundle del cliente.
+      </small>
+    </div>
+  </div>
+</section>

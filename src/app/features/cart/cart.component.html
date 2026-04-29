@@ -1,0 +1,180 @@
+<div class="cart-container" *ngIf="(items$ | async)?.length || feedbackMessage">
+  <div class="cart-header">
+    <div>
+      <p class="eyebrow">Checkout rapido</p>
+      <h3>Tu pedido</h3>
+    </div>
+    <span class="count">{{ cart.length }} items</span>
+  </div>
+
+  <p
+    *ngIf="feedbackMessage"
+    class="feedback"
+    [class.warning]="feedbackTone === 'warning'">
+    {{ feedbackMessage }}
+  </p>
+
+  <div class="cart-item" *ngFor="let item of cart">
+    <img [src]="item.product.image" [alt]="item.product.name" />
+
+    <div class="item-copy">
+      <strong>{{ item.product.name }}</strong>
+      <small>{{ item.product.category }}</small>
+
+      <div class="quantity">
+        <button type="button" (click)="decrease(item.product.id)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button type="button" (click)="increase(item.product)">+</button>
+      </div>
+    </div>
+
+    <div class="price-group">
+      <strong>${{ (item.product.price * item.quantity).toFixed(2) }}</strong>
+      <button type="button" class="remove-btn" (click)="remove(item.product.id)">
+        Quitar
+      </button>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="carritoVacio">
+    <strong>Pedido registrado</strong>
+    <p>Agrega nuevos productos para crear otro pedido.</p>
+  </div>
+
+  <section class="customer-card" *ngIf="!carritoVacio">
+    <div class="section-title">
+      <h4>Datos del cliente</h4>
+      <span>Necesarios para seguimiento y despacho</span>
+    </div>
+
+    <div class="input-grid">
+      <input
+        type="text"
+        placeholder="Nombre del cliente"
+        [(ngModel)]="customer.name" />
+
+      <input
+        type="text"
+        placeholder="Telefono o WhatsApp"
+        [(ngModel)]="customer.phone" />
+
+      <input
+        type="email"
+        placeholder="Correo (opcional)"
+        [(ngModel)]="customer.email" />
+    </div>
+
+    <textarea
+      rows="2"
+      placeholder="Notas para entrega o referencia"
+      [(ngModel)]="customer.notes"></textarea>
+  </section>
+
+  <section class="totals-card" *ngIf="!carritoVacio">
+    <div>
+      <span>Subtotal</span>
+      <strong>${{ subtotal.toFixed(2) }}</strong>
+    </div>
+    <div>
+      <span>IVA (15%)</span>
+      <strong>${{ tax.toFixed(2) }}</strong>
+    </div>
+    <div class="grand-total">
+      <span>Total</span>
+      <strong>${{ total.toFixed(2) }}</strong>
+    </div>
+  </section>
+
+  <section class="billing-card" *ngIf="!carritoVacio">
+    <div class="section-title">
+      <h4>Comprobante</h4>
+      <span>Opcional para cada pedido</span>
+    </div>
+
+    <div class="radio-group">
+      <label>
+        <input
+          type="radio"
+          name="comprobante"
+          [checked]="comprobante === 'factura'"
+          (change)="seleccionarComprobante('factura')" />
+        Factura
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="comprobante"
+          [checked]="comprobante === 'nota'"
+          (change)="seleccionarComprobante('nota')" />
+        Nota de venta
+      </label>
+    </div>
+
+    <div *ngIf="comprobante === 'factura'" class="factura-form">
+      <input
+        type="text"
+        placeholder="RUC"
+        [(ngModel)]="datosFactura.ruc"
+        (ngModelChange)="updateDatosFactura()" />
+
+      <input
+        type="text"
+        placeholder="Razon social"
+        [(ngModel)]="datosFactura.razonSocial"
+        (ngModelChange)="updateDatosFactura()" />
+
+      <input
+        type="text"
+        placeholder="Direccion fiscal"
+        [(ngModel)]="datosFactura.direccionFiscal"
+        (ngModelChange)="updateDatosFactura()" />
+
+      <input
+        type="email"
+        placeholder="Correo"
+        [(ngModel)]="datosFactura.correo"
+        (ngModelChange)="updateDatosFactura()" />
+
+      <input
+        type="text"
+        placeholder="Telefono"
+        [(ngModel)]="datosFactura.telefono"
+        (ngModelChange)="updateDatosFactura()" />
+    </div>
+  </section>
+
+  <div class="actions" *ngIf="!carritoVacio">
+    <button
+      type="button"
+      class="whatsapp-btn"
+      [disabled]="carritoVacio"
+      (click)="enviarWhatsApp()">
+      Confirmar retiro
+    </button>
+
+    <button
+      type="button"
+      class="delivery-btn"
+      [disabled]="carritoVacio"
+      [class.confirmado]="pedidoConfirmado"
+      (click)="openDeliveryModal()">
+      {{ pedidoConfirmado ? 'Pedido registrado' : 'Enviar a domicilio' }}
+    </button>
+  </div>
+
+  <p class="helper" *ngIf="!carritoVacio">
+    Cada pedido genera un codigo interno para controlarlo desde el admin.
+  </p>
+
+  <app-delivery-modal
+    *ngIf="showDeliveryModal"
+    [items]="cart"
+    [subtotal]="subtotal"
+    [tax]="tax"
+    [total]="total"
+    [customerDraft]="customer"
+    (closeModal)="closeDeliveryModal()"
+    (orderPlaced)="onDeliveryOrderPlaced($event)">
+  </app-delivery-modal>
+</div>
