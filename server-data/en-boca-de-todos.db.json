@@ -2,7 +2,7 @@
   "version": 1,
   "meta": {
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T20:26:46.819Z",
+    "updatedAt": "2026-05-01T11:33:30.122Z",
     "restaurantName": "EN BOCA DE TODOS",
     "country": "Ecuador",
     "currency": "USD"
@@ -25,11 +25,11 @@
   "adminChallenges": [],
   "adminSessions": [
     {
-      "id": "adm-session-3ffc2aa0-1246-4c81-9446-7bd5c228e79f",
+      "id": "adm-session-d9022a39-7319-4c12-b679-12deae77bd9d",
       "adminId": "admin-primary",
-      "token": "adm-token-e07b41dc-7244-41e1-915e-936a73210f53",
-      "createdAt": "2026-04-29T20:24:42.883Z",
-      "expiresAt": "2026-04-30T04:24:42.883Z"
+      "token": "adm-token-008bd2dd-f2fd-4cba-82f1-189726596a2b",
+      "createdAt": "2026-05-01T11:33:30.122Z",
+      "expiresAt": "2026-05-01T19:33:30.122Z"
     }
   ],
   "orders": [
@@ -145,6 +145,187 @@
   ],
   "contacts": [
     {
+      "id": "crm-contact-1h0ux6ka",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "consulta-general"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:32:44.234Z",
+      "createdAt": "2026-05-01T11:32:44.234Z",
+      "updatedAt": "2026-05-01T11:32:44.234Z"
+    },
+    {
+      "id": "crm-contact-kqu18ed5",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:32:44.231Z",
+      "createdAt": "2026-05-01T11:32:44.231Z",
+      "updatedAt": "2026-05-01T11:32:44.231Z"
+    },
+    {
+      "id": "crm-contact-s773fe8j",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "delivery"
+      ],
+      "score": 25,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:32:16.652Z",
+      "createdAt": "2026-05-01T11:32:16.652Z",
+      "updatedAt": "2026-05-01T11:32:16.652Z"
+    },
+    {
+      "id": "crm-contact-r0bjf52l",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:32:16.649Z",
+      "createdAt": "2026-05-01T11:32:16.649Z",
+      "updatedAt": "2026-05-01T11:32:16.649Z"
+    },
+    {
+      "id": "crm-contact-evlnk07x",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "consulta-general"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:32:11.731Z",
+      "createdAt": "2026-05-01T11:32:11.731Z",
+      "updatedAt": "2026-05-01T11:32:11.731Z"
+    },
+    {
+      "id": "crm-contact-r64yc8e7",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:32:11.727Z",
+      "createdAt": "2026-05-01T11:32:11.727Z",
+      "updatedAt": "2026-05-01T11:32:11.727Z"
+    },
+    {
+      "id": "crm-contact-808zimy4",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "delivery"
+      ],
+      "score": 25,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:31:54.816Z",
+      "createdAt": "2026-05-01T11:31:54.816Z",
+      "updatedAt": "2026-05-01T11:31:54.816Z"
+    },
+    {
+      "id": "crm-contact-cliah9tn",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:31:54.813Z",
+      "createdAt": "2026-05-01T11:31:54.813Z",
+      "updatedAt": "2026-05-01T11:31:54.813Z"
+    },
+    {
+      "id": "crm-contact-27edfzmq",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "consulta-general"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:31:26.089Z",
+      "createdAt": "2026-05-01T11:31:26.089Z",
+      "updatedAt": "2026-05-01T11:31:26.089Z"
+    },
+    {
+      "id": "crm-contact-rg0y3uv6",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:31:26.085Z",
+      "createdAt": "2026-05-01T11:31:26.085Z",
+      "updatedAt": "2026-05-01T11:31:26.085Z"
+    },
+    {
+      "id": "crm-contact-qg4b7xug",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "producto",
+        "Hamburguesas"
+      ],
+      "score": 30,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:31:17.924Z",
+      "createdAt": "2026-05-01T11:31:17.924Z",
+      "updatedAt": "2026-05-01T11:31:17.924Z"
+    },
+    {
+      "id": "crm-contact-206agwby",
+      "name": "Visitante web",
+      "source": "chatbot",
+      "stage": "lead",
+      "tags": [
+        "chatbot"
+      ],
+      "score": 14,
+      "totalOrders": 0,
+      "totalSpent": 0,
+      "lastInteractionAt": "2026-05-01T11:31:17.916Z",
+      "createdAt": "2026-05-01T11:31:17.916Z",
+      "updatedAt": "2026-05-01T11:31:17.916Z"
+    },
+    {
       "id": "crm-contact-i1wma6wt",
       "name": "jefferson",
       "phone": "593963095265",
@@ -192,6 +373,126 @@
   ],
   "conversations": [
     {
+      "id": "crm-conv-d30w52yx",
+      "contactId": "crm-contact-1h0ux6ka",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "createdAt": "2026-05-01T11:32:44.235Z",
+      "updatedAt": "2026-05-01T11:32:44.236Z"
+    },
+    {
+      "id": "crm-conv-ee1q3db3",
+      "contactId": "crm-contact-kqu18ed5",
+      "channel": "chatbot",
+      "status": "waiting",
+      "subject": "Asistente comercial",
+      "lastMessage": "0963095265 miraflores alto",
+      "createdAt": "2026-05-01T11:32:44.232Z",
+      "updatedAt": "2026-05-01T11:32:44.233Z"
+    },
+    {
+      "id": "crm-conv-w6fbs098",
+      "contactId": "crm-contact-s773fe8j",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Para delivery necesito nombre, WhatsApp y direccion. Luego el admin te envia seguimiento por WhatsApp en cada etapa.",
+      "createdAt": "2026-05-01T11:32:16.652Z",
+      "updatedAt": "2026-05-01T11:32:16.654Z"
+    },
+    {
+      "id": "crm-conv-8ee3bcub",
+      "contactId": "crm-contact-r0bjf52l",
+      "channel": "chatbot",
+      "status": "waiting",
+      "subject": "Asistente comercial",
+      "lastMessage": "delivery",
+      "createdAt": "2026-05-01T11:32:16.649Z",
+      "updatedAt": "2026-05-01T11:32:16.650Z"
+    },
+    {
+      "id": "crm-conv-hex8adr9",
+      "contactId": "crm-contact-evlnk07x",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "createdAt": "2026-05-01T11:32:11.731Z",
+      "updatedAt": "2026-05-01T11:32:11.733Z"
+    },
+    {
+      "id": "crm-conv-k24b2dq1",
+      "contactId": "crm-contact-r64yc8e7",
+      "channel": "chatbot",
+      "status": "waiting",
+      "subject": "Asistente comercial",
+      "lastMessage": "0963095265",
+      "createdAt": "2026-05-01T11:32:11.728Z",
+      "updatedAt": "2026-05-01T11:32:11.729Z"
+    },
+    {
+      "id": "crm-conv-ncx5bdru",
+      "contactId": "crm-contact-808zimy4",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Para delivery necesito nombre, WhatsApp y direccion. Luego el admin te envia seguimiento por WhatsApp en cada etapa.",
+      "createdAt": "2026-05-01T11:31:54.816Z",
+      "updatedAt": "2026-05-01T11:31:54.817Z"
+    },
+    {
+      "id": "crm-conv-eyc1lhac",
+      "contactId": "crm-contact-cliah9tn",
+      "channel": "chatbot",
+      "status": "waiting",
+      "subject": "Asistente comercial",
+      "lastMessage": "delivery",
+      "createdAt": "2026-05-01T11:31:54.814Z",
+      "updatedAt": "2026-05-01T11:31:54.815Z"
+    },
+    {
+      "id": "crm-conv-ysk2i3r7",
+      "contactId": "crm-contact-27edfzmq",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "createdAt": "2026-05-01T11:31:26.089Z",
+      "updatedAt": "2026-05-01T11:31:26.090Z"
+    },
+    {
+      "id": "crm-conv-9zksxsd4",
+      "contactId": "crm-contact-rg0y3uv6",
+      "channel": "chatbot",
+      "status": "waiting",
+      "subject": "Asistente comercial",
+      "lastMessage": "delivey",
+      "createdAt": "2026-05-01T11:31:26.086Z",
+      "updatedAt": "2026-05-01T11:31:26.087Z"
+    },
+    {
+      "id": "crm-conv-1of6ltrj",
+      "contactId": "crm-contact-qg4b7xug",
+      "channel": "chatbot",
+      "status": "open",
+      "subject": "Asistente comercial",
+      "lastMessage": "Agregue Hamburguesa Completa a tu pedido. Tambien puedo ayudarte con delivery, retiro o seguimiento.",
+      "createdAt": "2026-05-01T11:31:17.925Z",
+      "updatedAt": "2026-05-01T11:31:17.926Z"
+    },
+    {
+      "id": "crm-conv-046ag4ff",
+      "contactId": "crm-contact-206agwby",
+      "channel": "chatbot",
+      "status": "waiting",
+      "subject": "Asistente comercial",
+      "lastMessage": "quiero una haburguesa completa",
+      "createdAt": "2026-05-01T11:31:17.920Z",
+      "updatedAt": "2026-05-01T11:31:17.922Z"
+    },
+    {
       "id": "crm-conv-phr4kc1o",
       "contactId": "crm-contact-i1wma6wt",
       "channel": "chatbot",
@@ -203,6 +504,108 @@
     }
   ],
   "messages": [
+    {
+      "id": "crm-msg-slj6lbfs",
+      "conversationId": "crm-conv-d30w52yx",
+      "contactId": "crm-contact-1h0ux6ka",
+      "sender": "bot",
+      "text": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "intent": "unknown",
+      "createdAt": "2026-05-01T11:32:44.235Z"
+    },
+    {
+      "id": "crm-msg-ip2rx09i",
+      "conversationId": "crm-conv-ee1q3db3",
+      "contactId": "crm-contact-kqu18ed5",
+      "sender": "customer",
+      "text": "0963095265 miraflores alto",
+      "createdAt": "2026-05-01T11:32:44.232Z"
+    },
+    {
+      "id": "crm-msg-eekrj2gl",
+      "conversationId": "crm-conv-w6fbs098",
+      "contactId": "crm-contact-s773fe8j",
+      "sender": "bot",
+      "text": "Para delivery necesito nombre, WhatsApp y direccion. Luego el admin te envia seguimiento por WhatsApp en cada etapa.",
+      "intent": "delivery",
+      "createdAt": "2026-05-01T11:32:16.653Z"
+    },
+    {
+      "id": "crm-msg-20u3djqq",
+      "conversationId": "crm-conv-8ee3bcub",
+      "contactId": "crm-contact-r0bjf52l",
+      "sender": "customer",
+      "text": "delivery",
+      "createdAt": "2026-05-01T11:32:16.650Z"
+    },
+    {
+      "id": "crm-msg-0cv7g1oe",
+      "conversationId": "crm-conv-hex8adr9",
+      "contactId": "crm-contact-evlnk07x",
+      "sender": "bot",
+      "text": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "intent": "unknown",
+      "createdAt": "2026-05-01T11:32:11.732Z"
+    },
+    {
+      "id": "crm-msg-mw1q4zi0",
+      "conversationId": "crm-conv-k24b2dq1",
+      "contactId": "crm-contact-r64yc8e7",
+      "sender": "customer",
+      "text": "0963095265",
+      "createdAt": "2026-05-01T11:32:11.728Z"
+    },
+    {
+      "id": "crm-msg-2cmkmwyi",
+      "conversationId": "crm-conv-ncx5bdru",
+      "contactId": "crm-contact-808zimy4",
+      "sender": "bot",
+      "text": "Para delivery necesito nombre, WhatsApp y direccion. Luego el admin te envia seguimiento por WhatsApp en cada etapa.",
+      "intent": "delivery",
+      "createdAt": "2026-05-01T11:31:54.817Z"
+    },
+    {
+      "id": "crm-msg-bhe9tnrf",
+      "conversationId": "crm-conv-eyc1lhac",
+      "contactId": "crm-contact-cliah9tn",
+      "sender": "customer",
+      "text": "delivery",
+      "createdAt": "2026-05-01T11:31:54.814Z"
+    },
+    {
+      "id": "crm-msg-fsrda2j7",
+      "conversationId": "crm-conv-ysk2i3r7",
+      "contactId": "crm-contact-27edfzmq",
+      "sender": "bot",
+      "text": "Puedo ayudarte con menu, delivery, retiro, factura o seguimiento. Escribe el producto o el tipo de ayuda que necesitas.",
+      "intent": "unknown",
+      "createdAt": "2026-05-01T11:31:26.090Z"
+    },
+    {
+      "id": "crm-msg-2484iug2",
+      "conversationId": "crm-conv-9zksxsd4",
+      "contactId": "crm-contact-rg0y3uv6",
+      "sender": "customer",
+      "text": "delivey",
+      "createdAt": "2026-05-01T11:31:26.087Z"
+    },
+    {
+      "id": "crm-msg-9ye08zic",
+      "conversationId": "crm-conv-1of6ltrj",
+      "contactId": "crm-contact-qg4b7xug",
+      "sender": "bot",
+      "text": "Agregue Hamburguesa Completa a tu pedido. Tambien puedo ayudarte con delivery, retiro o seguimiento.",
+      "intent": "product-interest",
+      "createdAt": "2026-05-01T11:31:17.926Z"
+    },
+    {
+      "id": "crm-msg-krn3ip5r",
+      "conversationId": "crm-conv-046ag4ff",
+      "contactId": "crm-contact-206agwby",
+      "sender": "customer",
+      "text": "quiero una haburguesa completa",
+      "createdAt": "2026-05-01T11:31:17.921Z"
+    },
     {
       "id": "crm-msg-uuomuwmr",
       "conversationId": "crm-conv-phr4kc1o",
@@ -321,6 +724,60 @@
     }
   ],
   "activities": [
+    {
+      "contactId": "crm-contact-kqu18ed5",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de Visitante web",
+      "detail": "0963095265 miraflores alto",
+      "id": "crm-act-e6y3tlqf",
+      "createdAt": "2026-05-01T11:32:44.233Z"
+    },
+    {
+      "contactId": "crm-contact-r0bjf52l",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de Visitante web",
+      "detail": "delivery",
+      "id": "crm-act-rjhq3syc",
+      "createdAt": "2026-05-01T11:32:16.651Z"
+    },
+    {
+      "contactId": "crm-contact-r64yc8e7",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de Visitante web",
+      "detail": "0963095265",
+      "id": "crm-act-sf67ls3q",
+      "createdAt": "2026-05-01T11:32:11.730Z"
+    },
+    {
+      "contactId": "crm-contact-cliah9tn",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de Visitante web",
+      "detail": "delivery",
+      "id": "crm-act-5yo8n9s6",
+      "createdAt": "2026-05-01T11:31:54.815Z"
+    },
+    {
+      "contactId": "crm-contact-rg0y3uv6",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de Visitante web",
+      "detail": "delivey",
+      "id": "crm-act-777r8pvi",
+      "createdAt": "2026-05-01T11:31:26.088Z"
+    },
+    {
+      "contactId": "crm-contact-206agwby",
+      "type": "message",
+      "channel": "chatbot",
+      "title": "Mensaje de Visitante web",
+      "detail": "quiero una haburguesa completa",
+      "id": "crm-act-82a8ndo0",
+      "createdAt": "2026-05-01T11:31:17.922Z"
+    },
     {
       "contactId": "crm-contact-i1wma6wt",
       "type": "whatsapp",
@@ -500,6 +957,26 @@
     }
   ],
   "auditLogs": [
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.confirmed",
+      "entity": "admin_session",
+      "entityId": "adm-session-d9022a39-7319-4c12-b679-12deae77bd9d",
+      "detail": "Sesion administrativa iniciada.",
+      "id": "audit-dbc3f5c7-b005-4e68-986a-32b2b5b2c6fd",
+      "createdAt": "2026-05-01T11:33:30.122Z"
+    },
+    {
+      "actorType": "admin",
+      "actorId": "admin-primary",
+      "action": "admin.login.challenge_created",
+      "entity": "admin",
+      "entityId": "admin-primary",
+      "detail": "Credenciales validadas, codigo de confirmacion requerido.",
+      "id": "audit-43c779ca-fd9a-4def-b4e4-eabbde4af924",
+      "createdAt": "2026-05-01T11:33:24.037Z"
+    },
     {
       "actorType": "admin",
       "actorId": "admin-primary",
